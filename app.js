@@ -122,7 +122,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.post("/", (req, res) => {
-
+  console.log(req.body)
   io.on('connection', function (socket) {
     console.log("Connected succesfully to the socket ...");
 
