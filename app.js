@@ -130,9 +130,7 @@ app.post("/", (req, res) => {
     // Send news on the socket
     socket.emit('message', req.body.text);
 
-    socket.on('my other event', function (data) {
-      console.log(data);
-    })
+
   });
 
 
