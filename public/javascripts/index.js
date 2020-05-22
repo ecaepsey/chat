@@ -1,6 +1,6 @@
 var socket = io('localhost:3000');
 
-socket.on('news', function (data) {
+socket.on('message', function (data) {
     var div = document.getElementById("news-list");
     console.log("Rendering news : ",data);
     //
