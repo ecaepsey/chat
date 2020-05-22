@@ -1,4 +1,4 @@
-var socket = io('localhost:3000');
+var socket = io('http://161.35.61.122:3000');
 
 socket.on('message', function (data) {
     var div = document.getElementById("news-list");
