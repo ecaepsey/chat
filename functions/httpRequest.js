@@ -3,9 +3,9 @@ const token = '4cff7c40232011058ebed131e32f82';
 
 export const postWebHook = () => {
     const body = {
-        "url": "/hook",
+        "url": "http://161.35.61.122:3000",
         "name": "My first web hook",
-        "events": ["inbox"]
+        "events": ["outbox"]
     };
 
     const options = {
