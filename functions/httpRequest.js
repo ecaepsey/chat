@@ -20,10 +20,10 @@ export const postWebHook = () => {
     };
     return request(options)
         .then(function (parsedBody) {
-           console.log(parsedBody)
+
         })
         .catch(function (err) {
-            console.log(err)
+
         });
 
 };

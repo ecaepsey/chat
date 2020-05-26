@@ -123,22 +123,26 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.post("/", (req, res) => {
-  console.log(req.body)
-  io.on('connection', function (socket) {
-    console.log("Connected succesfully to the socket ...");
+  console.log(req.body.text)
 
 
-    // Send news on the socket
-    socket.emit('message', req.body.text);
 
-    socket.on('my other event', function (data) {
-      console.log(data);
-    })
-  });
+
+    io.sockets.emit("message", req.body.text);
+    res.send({});
+
+
+  const getApiAndEmit = socket => {
+    const response = new Date();
+    // Emitting a new message. Will be consumed by the client
+    socket.emit("message", req.body.text);
+  };
 
 
   res.send(200)
 })
+
+
 
 postWebHook()
 
