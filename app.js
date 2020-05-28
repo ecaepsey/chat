@@ -122,14 +122,7 @@ var usersRouter = require('./routes/users');
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 //
-// app.post("/", (req, res) => {
-//   console.log(req.body.text)
-//   console.log(req.body)
-//     io.sockets.emit("message", req.body.text);
-//     res.send(200);
-//
-//
-// })
+
 //
 //
 //
@@ -195,9 +188,35 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', function(socket){
-  console.log('a user connected');
+
+app.post("/", (req, res) => {
+  console.log(req.body.text)
+  console.log(req.body)
+    io.sockets.emit("message", req.body.text);
+    res.send(200);
+
+
+})
+
+let interval;
+
+io.on("connection", (socket) => {
+  console.log("New client connected");
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getApiAndEmit(socket), 1000);
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+    clearInterval(interval);
+  });
 });
+
+const getApiAndEmit = socket => {
+  const response = new Date();
+  // Emitting a new message. Will be consumed by the client
+  socket.emit("FromAPI", response);
+};
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
