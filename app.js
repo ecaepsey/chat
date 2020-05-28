@@ -124,18 +124,9 @@ app.use('/users', usersRouter);
 
 app.post("/", (req, res) => {
   console.log(req.body.text)
-
-
-
-
+  console.log(req.body)
     io.sockets.emit("message", req.body.text);
     res.send(200);
-
-
-
-
-
-  
 })
 
 
