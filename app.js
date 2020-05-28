@@ -193,21 +193,24 @@ let interval;
 io.on("connection", (socket) => {
   console.log("New client connected");
 
-  app.post("/", (req, res) => {
-    console.log(req.body.text)
-    console.log(req.body)
-    socket.emit('FromAPI', req.body)
 
-    res.send(200);
-
-
-  })
 
   socket.on("disconnect", () => {
     console.log("Client disconnected");
 
   });
 });
+
+
+app.post("/", (req, res) => {
+  console.log(req.body.text)
+  console.log(req.body)
+  io.sockets.emit('FromAPI', req.body)
+
+  res.send(200);
+
+
+})
 
 
 
