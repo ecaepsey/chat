@@ -193,8 +193,16 @@ let interval;
 io.on("connection", (socket) => {
   console.log("New client connected");
 
+  app.post("/", (req, res) => {
+    console.log(req.body.text)
+    console.log(req.body)
+    socket.emit('FromAPI', req.body)
 
-  getApiAndEmit(socket));
+    res.send(200);
+
+
+  })
+
   socket.on("disconnect", () => {
     console.log("Client disconnected");
 
@@ -202,21 +210,14 @@ io.on("connection", (socket) => {
 });
 
 
-app.post("/", (req, res) => {
-  console.log(req.body.text)
-  console.log(req.body)
-
-    const getApiAndEmit = socket => {
-
-      // Emitting a new message. Will be consumed by the client
-      socket.emit("FromAPI", req.body);
-    };
 
 
-    res.send(200);
+// const getApiAndEmit = socket => {
+//
+//   // Emitting a new message. Will be consumed by the client
+//   socket.emit("FromAPI", req.body);
+// };
 
-
-})
 
 
 
