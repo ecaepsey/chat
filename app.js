@@ -9,7 +9,7 @@
 //
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// import {postWebHook, sendMessage} from './functions/httpRequest'
+import {postWebHook, sendMessage} from './functions/httpRequest'
 //
 // var app = express();
 //
@@ -197,6 +197,8 @@ app.post("/", (req, res) => {
 
 
 })
+
+postWebHook()
 
 let interval;
 
