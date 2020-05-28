@@ -184,44 +184,27 @@ var usersRouter = require('./routes/users');
 //
 //
 
-var express = require('express');
-var path = require('path');
-var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(express.static(__dirname + '/node_modules'));
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-
-app.get('/', function(req, res,next) {
+app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-server.listen(3000);
-
-
-io.on('connection', function(client) {
-  console.log('Client connected...');
-
-  client.on('join', function(data) {
-    console.log(data);
-  });
-
-  client.on('messages', function(data) {
-    client.emit('broad', data);
-    client.broadcast.emit('broad',data);
-  });
-
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
+
+
+
+
+
