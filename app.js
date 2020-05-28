@@ -123,16 +123,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.post("/", (req, res) => {
-  // console.log(req.body.text)
-  // console.log(req.body)
-  //   io.sockets.emit("message", req.body.text);
-  //   res.send(200);
+  console.log(req.body.text)
+  console.log(req.body)
+    io.sockets.emit("message", req.body.text);
+    res.send(200);
 
-  io.sockets.on('connection', function (socket) {
-    socket.on('message', function(msg) {
-      console.log(msg);
-    });
-  });
+
 })
 
 
