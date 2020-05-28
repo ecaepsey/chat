@@ -18,11 +18,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2470">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1590688888312" expanded="true" signature="2208:2272" ph="..." />
+                <marker date="1590688946035" expanded="true" signature="2205:2269" ph="..." />
               </folding>
             </state>
           </provider>
@@ -217,7 +217,7 @@
       <workItem from="1590090208989" duration="18710000" />
       <workItem from="1590401068620" duration="3569000" />
       <workItem from="1590466140562" duration="1879000" />
-      <workItem from="1590668988479" duration="9116000" />
+      <workItem from="1590668988479" duration="9168000" />
     </task>
     <task id="LOCAL-00001" summary="f">
       <created>1590669391029</created>
@@ -258,7 +258,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33274000" />
+    <option name="totallyTimeSpent" value="33326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="182" y="95" width="1440" height="710" extended-state="0" />
@@ -372,11 +372,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2470">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1590688888312" expanded="true" signature="2208:2272" ph="..." />
+            <marker date="1590688946035" expanded="true" signature="2205:2269" ph="..." />
           </folding>
         </state>
       </provider>
