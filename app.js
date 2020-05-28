@@ -129,17 +129,13 @@ app.post("/", (req, res) => {
 
 
     io.sockets.emit("message", req.body.text);
-    res.send({});
+    res.send(200);
 
 
-  const getApiAndEmit = socket => {
-    const response = new Date();
-    // Emitting a new message. Will be consumed by the client
-    socket.emit("message", req.body.text);
-  };
 
 
-  res.send(200)
+
+  
 })
 
 
