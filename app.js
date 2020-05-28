@@ -142,6 +142,13 @@ io.on('connection', function(socket){
 
 
 
+io.sockets.on('connection', function (socket) {
+  socket.emit('message', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+
 
 
 postWebHook()
